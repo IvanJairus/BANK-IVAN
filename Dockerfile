@@ -2,10 +2,10 @@ FROM python:3
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /main
 WORKDIR /main
-COPY requirements.txt
-COPY main.py
-COPY app.py
-COPY config.py
+COPY requirements.txt /main
+COPY main.py /main
+COPY app.py /main
+COPY config.py /main
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY . /main
