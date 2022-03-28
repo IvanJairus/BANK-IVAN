@@ -23,6 +23,7 @@ def add_user():
                 sql = "INSERT INTO tbl_karyawan(nama, alamat, tempat_lahir, tanggal_lahir, no_KTP, no_HP) VALUES(%s, %s, %s, %s, %s, %s)"
                 data = (_nama, _alamat, _tempat_lahir, _tanggal_lahir, _no_KTP, _no_HP,)
                 conn = mysql.connect()
+                cursor = mysql.get_db().cursor()
                 cursor = conn.cursor()
                 cursor.execute(sql, data)
                 conn.commit()
